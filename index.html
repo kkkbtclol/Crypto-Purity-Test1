@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Solana Memecoin Purity Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .question {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #00ff9d;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #00cc7d;
+    }
+    .result {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Solana Memecoin Purity Test</h1>
+  <p>Check every box for something you’ve done, then hit "Calculate Score" to see your level of degeneracy.</p>
+
+  <form id="quizForm">
+    <div class="question"><input type="checkbox"> Bought a memecoin without reading the whitepaper</div>
+    <div class="question"><input type="checkbox"> Bought a coin because of the logo alone</div>
+    <div class="question"><input type="checkbox"> Bought because a Twitter influencer said “ngmi if you miss this”</div>
+    <div class="question"><input type="checkbox"> Bought into a project without checking the liquidity lock</div>
+    <div class="question"><input type="checkbox"> Held a bag down 90%+ because “it’ll bounce”</div>
+    <div class="question"><input type="checkbox"> Bought into a project that rugged within 24 hours</div>
+    <div class="question"><input type="checkbox"> Been rugged more than 5 times</div>
+    <div class="question"><input type="checkbox"> Been rugged more than 10 times</div>
+    <div class="question"><input type="checkbox"> Bought into a project and the dev deleted Twitter</div>
+    <div class="question"><input type="checkbox"> Bought into a project and the dev deleted Telegram/Discord</div>
+    <div class="question"><input type="checkbox"> Bought into a coin where liquidity was pulled mid-pump</div>
+    <div class="question"><input type="checkbox"> Bought a coin because it had “dog” or “cat” in the name</div>
+    <div class="question"><input type="checkbox"> Bought into a blatant derivative (e.g., $BONK copycat)</div>
+    <div class="question"><input type="checkbox"> Bought into a project with a market cap under $5k</div>
+    <div class="question"><input type="checkbox"> Bought into a coin with 0 holders besides the dev at launch</div>
+    <div class="question"><input type="checkbox"> Paid a transaction fee higher than your bag’s value</div>
+    <div class="question"><input type="checkbox"> Lost SOL to a fake Raydium/Phantom link</div>
+    <div class="question"><input type="checkbox"> Bought because you saw it trending on DEX Screener</div>
+    <div class="question"><input type="checkbox"> Bought into a presale and it never launched</div>
+    <div class="question"><input type="checkbox"> Bought into a coin and it went to zero the same day</div>
+    <div class="question"><input type="checkbox"> Held a bag so small you can’t sell because of gas/slippage</div>
+    <div class="question"><input type="checkbox"> Bought a coin because it had “Elon” in the name</div>
+    <div class="question"><input type="checkbox"> Bought a coin with no website</div>
+    <div class="question"><input type="checkbox"> Bought into a “stealth launch” and got wrecked</div>
+    <div class="question"><input type="checkbox"> Bought a coin after seeing a viral meme about it</div>
+    <div class="question"><input type="checkbox"> Bought after missing the first 500% pump thinking “still early”</div>
+    <div class="question"><input type="checkbox"> Bought a coin because the dev said “no rug”</div>
+    <div class="question"><input type="checkbox"> Bought into a coin only to realize it was a honeypot</div>
+    <div class="question"><input type="checkbox"> Bought into a coin because it had a 1-minute-old chart</div>
+    <div class="question"><input type="checkbox"> Bought a coin that went 100x after you sold</div>
+    <div class="question"><input type="checkbox"> Bought a coin that instantly dumped after you bought</div>
+    <div class="question"><input type="checkbox"> Bought into a coin while drunk/high</div>
+    <div class="question"><input type="checkbox"> Bought a coin because it had AI in the name</div>
+    <div class="question"><input type="checkbox"> Bought into a coin that had only 1 tweet</div>
+    <div class="question"><input type="checkbox"> Bought into a coin with 100% of supply in dev wallet</div>
+    <div class="question"><input type="checkbox"> Got sniped by bots on launch</div>
+    <div class="question"><input type="checkbox"> Tried to snipe a launch and failed</div>
+    <div class="question"><input type="checkbox"> Bought into a coin with supply in the quintillions</div>
+    <div class="question"><input type="checkbox"> Bought into a coin with “pump” or “moon” in the name</div>
+    <div class="question"><input type="checkbox"> Bought into a coin with no contract verification</div>
+    <div class="question"><input type="checkbox"> Bought into a coin that had a fake “audit”</div>
+    <div class="question"><input type="checkbox"> Bought a coin after seeing it in a Telegram spam link</div>
+    <div class="question"><input type="checkbox"> Bought into a coin shilled by a scam Twitter giveaway</div>
+    <div class="question"><input type="checkbox"> Bought into a coin just because it was trending #1 on Solscan</div>
+    <div class="question"><input type="checkbox"> Bought into a coin that soft rugged by disabling sells</div>
+    <div class="question"><input type="checkbox"> Bought into a coin where dev promised CEX listing “next week”</div>
+    <div class="question"><input type="checkbox"> Bought into a coin because “community is strong”</div>
+    <div class="question"><input type="checkbox"> Bought into a coin because the dev posted a hype GIF</div>
+    <div class="question"><input type="checkbox"> Bought into a coin just because the name made you laugh</div>
+    <div class="question"><input type="checkbox"> Bought into a coin even though you knew it was a scam</div>
+
+    <button type="button" onclick="calculateScore()">Calculate Score</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function calculateScore() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      let checkedCount = 0;
+      checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
+
+      let purityScore = ((checkboxes.length - checkedCount) / checkboxes.length) * 100;
+      let label = "";
+
+      if (purityScore > 80) label = "🚀 Solana Virgin";
+      else if (purityScore > 60) label = "💸 Low-Risk Trader";
+      else if (purityScore > 40) label = "🧠 Semi-Degen";
+      else if (purityScore > 20) label = "🔥 Full Degen";
+      else label = "☠ Certified Rug Magnet";
+
+      document.getElementById('result').innerHTML = 
+        `Your Crypto Purity Score: ${Math.round(purityScore)}/100<br>${label}`;
+    }
+  </script>
+
+</body>
+</html>
